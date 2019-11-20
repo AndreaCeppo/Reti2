@@ -38,7 +38,7 @@ public class Chat {
 
         MqttConnectOptions options = new MqttConnectOptions();
         options.setCleanSession(false);
-        // options.setWill(client.getTopic(toChannel), "I'm gone :(".getBytes(), 0, false);
+        options.setWill(client.getTopic(toChannel), "I'm gone :(".getBytes(), 0, false);
 
         client.setCallback(new MqttCallback() {
             @Override
@@ -59,7 +59,7 @@ public class Chat {
         });
 
         try {
-             client.connect();
+             client.connect(options);
             client.subscribe(fromChannel);
         } catch (MqttException e) {
             e.printStackTrace();
@@ -67,6 +67,8 @@ public class Chat {
 
         while (true){
             String message = scanner.nextLine();
+            if(message.equals("q"))
+                System.exit(0);
 
             final MqttTopic channelTopic = client.getTopic(toChannel);
             try {
