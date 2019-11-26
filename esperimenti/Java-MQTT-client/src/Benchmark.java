@@ -4,9 +4,9 @@ import java.util.*;
 
 public class Benchmark
 {
-	public static final String BROKER_URL = "tcp://test.mosquitto.org:1883";
+	public static final String BROKER_URL = "tcp://193.206.55.23:1883";
 
-	public static final String TOPIC = "20024195/benchmark";
+	public static final String TOPIC = "infouniupo/benchmark";
 
 	public static final int QTA = 10000;
 
@@ -22,14 +22,14 @@ public class Benchmark
 	private void startTest(int qos, int qta, int sleep) {
 
 		try {
-			String clientId = "20024195-benchmark";
+			String clientId = "infouniupo-benchmark";
 			client = new MqttClient(BROKER_URL, clientId);
 
 			final MqttTopic timeTopic = client.getTopic(TOPIC);
 
 			MqttConnectOptions options = new MqttConnectOptions();
 			options.setCleanSession(false);
-			options.setWill(client.getTopic(TOPIC), "END".getBytes(), qos, false);
+			options.setWill(client.getTopic(TOPIC), "0_0_0".getBytes(), qos, false);
 
 
 			client.connect(options);
@@ -119,15 +119,15 @@ public class Benchmark
 
 	public void test() throws MqttException
 	{
-		startTest(0,100,10);
-		startTest(0,1000,10);
-		startTest(0,10000,10);
-		startTest(1,100,10);
-		startTest(1,1000,10);
-		startTest(1,10000,10);
-		startTest(2,100,10);
-		startTest(2,1000,10);
-		startTest(2,10000,10);
+		//startTest(0,100,10);
+		startTest(0,2000,10);
+		//startTest(0,10000,10);
+		//startTest(1,100,10);
+		startTest(1,2000,10);
+		//startTest(1,10000,10);
+		//startTest(2,100,10);
+		startTest(2,2000,10);
+		//startTest(2,10000,10);
 
 
 	}
