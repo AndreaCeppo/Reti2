@@ -1,0 +1,317 @@
+1574761061: mosquitto version 1.6.3 starting
+1574761061: Config loaded from mosquitto.conf.
+1574761061: Opening websockets listen socket on port 9001.
+1574761061: Opening ipv4 listen socket on port 1883.
+1574761061: Opening ipv6 listen socket on port 1883.
+1574761121: New connection from ::1 on port 1883.
+1574761121: New client connected from ::1 as mosq/yiMZnDeaS0B9HGKFWK (p2, c1, k60).
+1574761160: New connection from ::1 on port 1883.
+1574761160: New client connected from ::1 as mosq/UFA25N9hel4FTqjFFh (p2, c1, k60).
+1574761160: Client mosq/UFA25N9hel4FTqjFFh disconnected.
+1574761166: Socket error on client mosq/yiMZnDeaS0B9HGKFWK, disconnecting.
+1574761463: mosquitto version 1.6.3 terminating
+1574761463: Saving in-memory database to ./datamosquitto.db.
+1574761471: mosquitto version 1.6.3 starting
+1574761471: Config loaded from mosquitto.conf.
+1574761471: Opening websockets listen socket on port 9001.
+1574761471: Opening ipv4 listen socket on port 1883.
+1574761471: Opening ipv6 listen socket on port 1883.
+1574761471: Connecting bridge bridge-master (193.206.55.23:1883)
+1574761500: New connection from ::1 on port 1883.
+1574761500: New client connected from ::1 as mosq/tiLFNUzsPlFZRliWwM (p2, c1, k60).
+1574761505: Socket error on client mosq/tiLFNUzsPlFZRliWwM, disconnecting.
+1574761509: New connection from ::1 on port 1883.
+1574761509: New client connected from ::1 as mosq/h3KqbitZW0FeYVCRWC (p2, c1, k60).
+1574761564: Socket error on client mosq/h3KqbitZW0FeYVCRWC, disconnecting.
+1574761586: New connection from ::1 on port 1883.
+1574761586: New client connected from ::1 as mosq/kgaoaFyqDSzpt1sZT6 (p2, c1, k60).
+1574761586: Client mosq/kgaoaFyqDSzpt1sZT6 disconnected.
+1574761603: mosquitto version 1.6.3 terminating
+1574761603: Saving in-memory database to ./datamosquitto.db.
+1574761604: mosquitto version 1.6.3 starting
+1574761604: Config loaded from mosquitto.conf.
+1574761604: Opening websockets listen socket on port 9001.
+1574761604: Opening ipv4 listen socket on port 1883.
+1574761604: Opening ipv6 listen socket on port 1883.
+1574761604: Connecting bridge bridge-master (193.206.55.23:1883)
+1574761614: New connection from ::1 on port 1883.
+1574761614: New client connected from ::1 as mosq/xGv2Y9iumtN7y768KN (p2, c1, k60).
+1574761647: Socket error on client mosq/xGv2Y9iumtN7y768KN, disconnecting.
+1574761655: New connection from ::1 on port 1883.
+1574761655: New client connected from ::1 as mosq/SgNQZlcHlpalOtEupK (p2, c1, k60).
+1574761655: Client mosq/SgNQZlcHlpalOtEupK disconnected.
+1574761665: mosquitto version 1.6.3 terminating
+1574761665: Saving in-memory database to ./datamosquitto.db.
+1574761667: mosquitto version 1.6.3 starting
+1574761667: Config loaded from mosquitto.conf.
+1574761667: Opening websockets listen socket on port 9001.
+1574761667: Opening ipv4 listen socket on port 1883.
+1574761667: Opening ipv6 listen socket on port 1883.
+1574761667: Connecting bridge bridge-master (193.206.55.23:1883)
+1574761678: New connection from ::1 on port 1883.
+1574761678: New client connected from ::1 as mosq/nlrHHPSWpNItSd83Ln (p2, c1, k60).
+1574761678: Client mosq/nlrHHPSWpNItSd83Ln disconnected.
+1574761687: New connection from ::1 on port 1883.
+1574761687: New client connected from ::1 as mosq/sW14iaKCfLCjeELMp6 (p2, c1, k60).
+1574761687: Client mosq/sW14iaKCfLCjeELMp6 disconnected.
+1574761692: New connection from ::1 on port 1883.
+1574761692: New client connected from ::1 as mosq/lt6QIlt3sXbSUHYnlL (p2, c1, k60).
+1574761692: Client mosq/lt6QIlt3sXbSUHYnlL disconnected.
+1574761700: mosquitto version 1.6.3 terminating
+1574761700: Saving in-memory database to ./datamosquitto.db.
+1574761708: mosquitto version 1.6.3 starting
+1574761708: Config loaded from mosquitto.conf.
+1574761708: Opening websockets listen socket on port 9001.
+1574761708: Opening ipv4 listen socket on port 1883.
+1574761708: Opening ipv6 listen socket on port 1883.
+1574761708: Connecting bridge bridge-master (193.206.55.23:1883)
+1574761711: New connection from ::1 on port 1883.
+1574761711: New client connected from ::1 as mosq/cxGMspoBeeLH1gwM1m (p2, c1, k60).
+1574761719: Socket error on client mosq/cxGMspoBeeLH1gwM1m, disconnecting.
+1574761923: mosquitto version 1.6.3 terminating
+1574761923: Saving in-memory database to ./datamosquitto.db.
+1574761925: mosquitto version 1.6.3 starting
+1574761925: Config loaded from mosquitto.conf.
+1574761925: Opening websockets listen socket on port 9001.
+1574761925: Opening ipv4 listen socket on port 1883.
+1574761925: Opening ipv6 listen socket on port 1883.
+1574761925: Connecting bridge bridge-master (193.206.55.23:8883)
+1574761925: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574761931: New connection from ::1 on port 1883.
+1574761931: New client connected from ::1 as mosq/emPj01Cb2LPgrCf8Yo (p2, c1, k60).
+1574761931: Connecting bridge bridge-master (193.206.55.23:8883)
+1574761931: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574761937: Connecting bridge bridge-master (193.206.55.23:8883)
+1574761937: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574761943: Connecting bridge bridge-master (193.206.55.23:8883)
+1574761943: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574761949: Connecting bridge bridge-master (193.206.55.23:8883)
+1574761949: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574761955: Connecting bridge bridge-master (193.206.55.23:8883)
+1574761955: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574761961: Connecting bridge bridge-master (193.206.55.23:8883)
+1574761961: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574761962: Socket error on client mosq/emPj01Cb2LPgrCf8Yo, disconnecting.
+1574761967: Connecting bridge bridge-master (193.206.55.23:8883)
+1574761967: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574761972: New connection from ::1 on port 1883.
+1574761972: New client connected from ::1 as mosq/RCL5LU9sdZNtcPYZqe (p2, c1, k60).
+1574761973: Connecting bridge bridge-master (193.206.55.23:8883)
+1574761973: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574761979: Connecting bridge bridge-master (193.206.55.23:8883)
+1574761979: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574761982: Socket error on client mosq/RCL5LU9sdZNtcPYZqe, disconnecting.
+1574761984: mosquitto version 1.6.3 terminating
+1574761984: Saving in-memory database to ./datamosquitto.db.
+1574761990: mosquitto version 1.6.3 starting
+1574761990: Config loaded from mosquitto.conf.
+1574761990: Opening websockets listen socket on port 9001.
+1574761990: Opening ipv4 listen socket on port 1883.
+1574761990: Opening ipv6 listen socket on port 1883.
+1574761990: Connecting bridge bridge-master (193.206.55.23:1883)
+1574761992: New connection from ::1 on port 1883.
+1574761992: New client connected from ::1 as mosq/rbadRToDWMfz8aDhJu (p2, c1, k60).
+1574762008: Socket error on client mosq/rbadRToDWMfz8aDhJu, disconnecting.
+1574762260: mosquitto version 1.6.3 terminating
+1574762260: Saving in-memory database to ./datamosquitto.db.
+1574762297: mosquitto version 1.6.3 starting
+1574762297: Config loaded from mosquitto.conf.
+1574762297: Opening websockets listen socket on port 9001.
+1574762297: Opening ipv4 listen socket on port 1883.
+1574762297: Opening ipv6 listen socket on port 1883.
+1574762297: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762297: Error: Unable to load CA certificates, check bridge_cafile "./cert/ca.crt".
+1574762297: OpenSSL Error: error:02001002:system library:fopen:No such file or directory
+1574762297: OpenSSL Error: error:2006D080:BIO routines:BIO_new_file:no such file
+1574762297: OpenSSL Error: error:0B084002:x509 certificate routines:X509_load_cert_crl_file:system lib
+1574762297: Warning: Unable to connect to bridge bridge-master.
+1574762301: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762305: New connection from ::1 on port 1883.
+1574762305: New client connected from ::1 as mosq/4GA8d6MuqNTYrlrrJq (p2, c1, k60).
+1574762336: Socket error on client mosq/4GA8d6MuqNTYrlrrJq, disconnecting.
+1574762342: mosquitto version 1.6.3 terminating
+1574762342: Saving in-memory database to ./datamosquitto.db.
+1574762344: mosquitto version 1.6.3 starting
+1574762344: Config loaded from mosquitto.conf.
+1574762344: Opening websockets listen socket on port 9001.
+1574762344: Opening ipv4 listen socket on port 1883.
+1574762344: Opening ipv6 listen socket on port 1883.
+1574762344: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762344: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762346: New connection from ::1 on port 1883.
+1574762346: New client connected from ::1 as mosq/yqYCn8i9wNxWUDOWrX (p2, c1, k60).
+1574762349: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762349: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762355: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762355: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762361: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762361: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762367: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762367: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762373: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762373: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762379: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762379: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762385: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762385: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762391: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762391: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762397: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762397: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762403: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762403: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762409: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762409: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762415: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762415: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762421: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762421: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762427: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762427: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762433: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762433: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762439: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762439: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762445: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762445: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762451: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762451: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762457: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762457: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762463: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762463: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762469: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762469: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762475: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762475: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762481: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762481: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762487: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762487: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762493: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762493: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762499: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762499: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762505: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762505: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762511: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762511: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762517: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762517: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762523: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762523: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762529: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762529: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762535: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762535: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762541: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762541: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762547: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762547: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762553: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762553: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762559: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762559: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762565: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762565: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762571: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762571: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762577: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762577: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762583: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762583: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762589: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762589: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762595: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762595: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762601: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762601: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762607: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762607: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762613: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762613: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762619: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762619: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762625: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762625: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762631: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762631: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762637: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762637: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762643: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762643: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762649: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762649: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762655: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762655: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762661: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762661: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762667: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762667: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762673: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762673: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762679: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762679: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762685: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762685: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762691: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762691: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762697: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762697: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762703: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762703: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762709: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762709: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762715: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762715: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762721: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762721: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762727: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762727: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762733: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762733: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762739: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762739: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762745: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762745: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762751: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762751: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762757: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762757: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762763: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762763: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762769: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762769: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762775: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762775: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762781: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762781: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762787: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762787: Socket error on client local.lab01.edu-al.unipmn.it.bridge-master, disconnecting.
+1574762791: mosquitto version 1.6.3 terminating
+1574762791: Saving in-memory database to ./datamosquitto.db.
+1574762796: mosquitto version 1.6.3 starting
+1574762796: Config loaded from mosquitto.conf.
+1574762796: Opening websockets listen socket on port 9001.
+1574762796: Opening ipv4 listen socket on port 1883.
+1574762796: Opening ipv6 listen socket on port 1883.
+1574762796: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762796: Error: Unable to load CA certificates, check bridge_cafile "./cert/ca.crt".
+1574762796: OpenSSL Error: error:02001002:system library:fopen:No such file or directory
+1574762796: OpenSSL Error: error:2006D080:BIO routines:BIO_new_file:no such file
+1574762796: OpenSSL Error: error:0B084002:x509 certificate routines:X509_load_cert_crl_file:system lib
+1574762796: Warning: Unable to connect to bridge bridge-master.
+1574762797: New connection from ::1 on port 1883.
+1574762797: New client connected from ::1 as mosq/yqYCn8i9wNxWUDOWrX (p2, c1, k60).
+1574762804: Socket error on client mosq/yqYCn8i9wNxWUDOWrX, disconnecting.
+1574762804: Connecting bridge bridge-master (193.206.55.23:8883)
+1574762805: New connection from ::1 on port 1883.
+1574762805: New client connected from ::1 as mosq/Bzb3N193Wf6bUaamOO (p2, c1, k60).
+1574763076: Socket error on client mosq/Bzb3N193Wf6bUaamOO, disconnecting.
+1574763207: Reloading config.
+1574763207: Loading config file ./conf.d/birdge-master.conf
+1574764597: Saving in-memory database to ./datamosquitto.db.
+1574765542: Reloading config.
+1574765542: Loading config file ./conf.d/birdge-master.conf
+1574765542: mosquitto version 1.6.3 terminating
+1574765542: Saving in-memory database to ./datamosquitto.db.
