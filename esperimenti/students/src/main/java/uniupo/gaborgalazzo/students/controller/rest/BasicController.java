@@ -1,4 +1,4 @@
-package uniupo.gaborgalazzo.students.controller;
+package uniupo.gaborgalazzo.students.controller.rest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,16 +1,13 @@
-package uniupo.gaborgalazzo.students.controller;
+package uniupo.gaborgalazzo.students.controller.rest;
 
 import cz.jirutka.rsql.parser.RSQLParser;
 import cz.jirutka.rsql.parser.ast.Node;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.jpa.domain.Specification;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import uniupo.gaborgalazzo.students.model.Student;
-import uniupo.gaborgalazzo.students.repository.IStudentRepository;
+import uniupo.gaborgalazzo.students.service.StudentService;
 import uniupo.gaborgalazzo.students.util.CustomRsqlVisitor;
 
 import javax.websocket.server.PathParam;
@@ -19,11 +16,11 @@ import java.util.List;
 @RestController
 public class StudentController {
 
-    private final IStudentRepository studentRepository;
+    private final StudentService studentService;
 
     @Autowired
-    public StudentController(IStudentRepository studentRepository) {
-        this.studentRepository = studentRepository;
+    public StudentController(StudentService studentService) {
+        this.studentService = studentService;
     }
 
 
@@ -32,8 +29,7 @@ public class StudentController {
             method = {RequestMethod.POST}
     )
     public Student add(@RequestBody Student student){
-        student.setId(null);
-        return studentRepository.save(student);
+        return studentService.addStudent(student);
     }
 
     @RequestMapping(
@@ -54,13 +50,7 @@ public class StudentController {
                     "- genres=in=(sci-fi,action) and genres=out=(romance,animated,horror) or director==Que*Tarantino")
             @RequestParam(required = false) String search){
 
-        if(search != null) {
-            Node rootNode = new RSQLParser().parse(search);
-            Specification<Student> spec = rootNode.accept(new CustomRsqlVisitor<Student>());
-            return studentRepository.findAll(spec);
-        }else {
-            return  studentRepository.findAll();
-        }
+       return studentService.getAllStudents(search);
 
     }
 
@@ -70,7 +60,7 @@ public class StudentController {
             produces = {"application/json", "application/xml"}
     )
     public Student getById(@PathParam("id") long id){
-        return studentRepository.findById(id).get();
+        return studentService.getStudentById(id);
     }
 
     @RequestMapping(
@@ -79,7 +69,7 @@ public class StudentController {
             produces = {"application/json", "application/xml"}
     )
     public void deleteById(@PathParam("id") long id){
-        studentRepository.deleteById(id);
+        studentService.deleteStudentById(id);
     }
 
     @RequestMapping(
@@ -87,6 +77,6 @@ public class StudentController {
             method = {RequestMethod.PUT}
     )
     public Student update(@RequestBody Student student){
-        return studentRepository.save(student);
+        return studentService.updateStudent(student);
     }
 }

@@ -1,11 +1,11 @@
-GET http://localhost:8080/student.json?search=name==*ab*
+GET http://localhost:8080/student.json
 ###
 
 POST http://localhost:8080/student
 Content-Type: application/json
 
 {
-  "name": "Gabor",
+  "name": "Gigi",
   "surname": "Galazzo"
 }
 
