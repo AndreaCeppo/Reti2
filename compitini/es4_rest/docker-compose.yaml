@@ -1,7 +1,10 @@
 version: '3'
 services:
-  mosquitto:
-    image: eclipse-mosquitto:latest
+  java:
+    image: openjdk:8
     ports:
-      - '1883:1883'
-      - '9001:9001'
+      - 80:8080
+    volumes:
+      - ./students-0.0.1-REST.jar:/app/app.jar
+      - ./data:/app/data
+    command: java -jar /app/app.jar
