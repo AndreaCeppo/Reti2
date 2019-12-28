@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Publisher {
 
-    public static final String BROKER_URL = "tcp://193.206.55.23:1883";
+    public static final String BROKER_URL = "tcp://localhost:1883";
 
     public static final String TOPIC = "PROVA/time";
 

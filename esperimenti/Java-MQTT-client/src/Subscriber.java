@@ -4,10 +4,10 @@ import java.util.Date;
 
 public class Subscriber {
 
-    public static final String BROKER_URL = "tcp://193.206.55.23:1883";
+    public static final String BROKER_URL = "tcp://localhost:1883";
     private Date date = new Date();
 
-    public static final String TOPIC = "retilab/#";
+    public static final String TOPIC = "#";
     //We have to generate a unique Client id.
     String clientId = date.getTime() + "-sub";
     private MqttClient mqttClient;
