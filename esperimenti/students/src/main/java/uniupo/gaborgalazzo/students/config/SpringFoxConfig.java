@@ -1,9 +1,6 @@
 package uniupo.gaborgalazzo.students.config;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.*;
 import springfox.bean.validators.configuration.BeanValidatorPluginsConfiguration;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -19,6 +16,7 @@ import java.util.Collections;
 @EnableSwagger2
 @Import(BeanValidatorPluginsConfiguration.class)
 @PropertySource("classpath:swagger.properties")
+@Profile({"rest-server"})
 public class SpringFoxConfig {
 
     @Bean

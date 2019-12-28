@@ -2,6 +2,7 @@ package uniupo.gaborgalazzo.students.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.util.PathMatcher;
@@ -20,6 +21,7 @@ import java.util.Map;
 
 @Configuration
 @EnableWebMvc
+@Profile({"rest-server"})
 public class WebConfig implements WebMvcConfigurer {
     @Override
     public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {

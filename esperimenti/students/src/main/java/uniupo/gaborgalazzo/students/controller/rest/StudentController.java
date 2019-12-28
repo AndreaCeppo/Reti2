@@ -4,6 +4,7 @@ import cz.jirutka.rsql.parser.RSQLParser;
 import cz.jirutka.rsql.parser.ast.Node;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.web.bind.annotation.*;
 import uniupo.gaborgalazzo.students.model.Student;
@@ -14,6 +15,7 @@ import javax.websocket.server.PathParam;
 import java.util.List;
 
 @RestController
+@Profile({"rest-server"})
 public class StudentController {
 
     private final StudentService studentService;

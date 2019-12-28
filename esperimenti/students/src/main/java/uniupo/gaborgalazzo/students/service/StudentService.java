@@ -3,6 +3,7 @@ package uniupo.gaborgalazzo.students.service;
 import cz.jirutka.rsql.parser.RSQLParser;
 import cz.jirutka.rsql.parser.ast.Node;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import uniupo.gaborgalazzo.students.model.Student;
@@ -12,6 +13,7 @@ import uniupo.gaborgalazzo.students.util.CustomRsqlVisitor;
 import java.util.List;
 
 @Service
+@Profile({"server"})
 public class StudentService {
 
     private final IStudentRepository studentRepository;
