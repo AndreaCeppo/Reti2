@@ -21,7 +21,6 @@ import java.util.Map;
 
 @Configuration
 @EnableWebMvc
-@Profile({"rest-server"})
 public class WebConfig implements WebMvcConfigurer {
     @Override
     public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {

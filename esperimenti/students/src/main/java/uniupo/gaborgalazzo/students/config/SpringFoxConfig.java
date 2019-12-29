@@ -16,7 +16,6 @@ import java.util.Collections;
 @EnableSwagger2
 @Import(BeanValidatorPluginsConfiguration.class)
 @PropertySource("classpath:swagger.properties")
-@Profile({"rest-server"})
 public class SpringFoxConfig {
 
     @Bean
@@ -31,9 +30,9 @@ public class SpringFoxConfig {
 
     private ApiInfo getApiInfo() {
         return new ApiInfo(
-                "Student REST Demo Application",
-                "Simple REST Interface to manage students",
-                "1.0.0",
+                "Student REST-AMQP Demo Application",
+                "Simple REST-AMQP Interface to manage students",
+                "2.0.0",
                 "",
                 new Contact("Gabor Galazzo", "https://www.dir.uniupo.it/user/profile.php?id=37094", "20024195@studenti.uniupo.it"),
                 "UNIUPO License",

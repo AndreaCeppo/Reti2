@@ -17,7 +17,7 @@ services:
 
   rabbitmq:
     image: "rabbitmq:3-management"
-    hostname: "rabbit"
+    container_name: rabbitmq
     ports:
       - "15672:15672"
       - "5672:5672"
@@ -27,18 +27,30 @@ services:
     volumes:
       - ./rabbitmq-isolated.conf:/etc/rabbitmq/rabbitmq.config
 
+  mosquitto:
+    image: eclipse-mosquitto:latest
+    ports:
+      - '1883:1883'
+      - '9001:9001'
 
   rest:
     image: openjdk:8
     volumes:
-      - ./students-0.0.1-REST.jar:/app/app.jar
-      - ./data:/app/data
-    command: java -jar /app/app.jar
+      - ./rest/students-0.0.1-REST.jar:/app/app.jar
+      - ./rest/application.properties:/app/application.properties
+      - ./rest/data:/app/data
+    command: java -jar /app/app.jar --spring.config.location=/app/application.properties
     labels:
-      - "traefik.http.middlewares.strip-rest.stripprefix.prefixes=/v1"
-      - "traefik.http.middlewares.strip-rest.stripprefix.forceslash=true"
-      - "traefik.http.middlewares.rest-redirectregex.redirectregex.regex=http://localhost/$$"
-      - "traefik.http.middlewares.rest-redirectregex.redirectregex.replacement=http://localhost/v1/swagger-ui.html"
       - "traefik.http.routers.rest.rule=PathPrefix(`/v1`)"
       - "traefik.http.services.rest.loadbalancer.server.port=8080"
-      - "traefik.http.routers.rest.middlewares=strip-rest@docker,rest-redirectregex@docker"
+
+  rest_and_amqp:
+    image: openjdk:8
+    volumes:
+      - ./amqp-server/students-0.0.2-AMQP-REST.jar:/app/app.jar
+      - ./amqp-server/application.properties:/app/application.properties
+      - ./amqp-server/data:/app/data
+    command: java -jar /app/app.jar --spring.config.location=/app/application.properties
+    labels:
+      - "traefik.http.routers.rest-amqp.rule=PathPrefix(`/v2`)"
+      - "traefik.http.services.rest-amqp.loadbalancer.server.port=8080"

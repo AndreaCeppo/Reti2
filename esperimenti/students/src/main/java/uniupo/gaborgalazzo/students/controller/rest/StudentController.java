@@ -15,7 +15,6 @@ import javax.websocket.server.PathParam;
 import java.util.List;
 
 @RestController
-@Profile({"rest-server"})
 public class StudentController {
 
     private final StudentService studentService;
@@ -61,17 +60,17 @@ public class StudentController {
             method = {RequestMethod.GET},
             produces = {"application/json", "application/xml"}
     )
-    public Student getById(@PathParam("id") long id){
+    public Student getById(@PathVariable("id") Long id){
         return studentService.getStudentById(id);
     }
 
     @RequestMapping(
             value = "/student/{id}",
-            method = {RequestMethod.DELETE},
-            produces = {"application/json", "application/xml"}
+            method = {RequestMethod.DELETE}
     )
-    public void deleteById(@PathParam("id") long id){
+    public Boolean deleteById(@PathVariable("id") Long id){
         studentService.deleteStudentById(id);
+        return true;
     }
 
     @RequestMapping(

@@ -7,7 +7,6 @@ import springfox.documentation.annotations.ApiIgnore;
 
 @Controller
 @ApiIgnore
-@Profile({"rest-server"})
 public class BasicController {
 
     @GetMapping

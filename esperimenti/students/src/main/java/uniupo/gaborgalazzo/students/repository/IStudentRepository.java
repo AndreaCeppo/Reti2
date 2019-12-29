@@ -6,7 +6,6 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.Repository;
 import uniupo.gaborgalazzo.students.model.Student;
-@Profile("server")
 public interface IStudentRepository extends JpaRepository<Student, Long>, JpaSpecificationExecutor<Student> {
 
 
