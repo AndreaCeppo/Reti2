@@ -3,7 +3,7 @@ services:
   rest:
     image: openjdk:8
     volumes:
-      - ./students-0.0.1-REST.jar:/app/app.jar
+      - ./student-0.0.1-REST.jar:/app/app.jar
       - ./application.properties:/app/application.properties
       - ./data:/app/data
     command: java -jar /app/app.jar --spring.config.location=/app/application.properties
