@@ -7,4 +7,4 @@ clean:
 	rm -rf lock
 
 run: build
-	java -cp "out;org.eclipse.paho.client.mqttv3-1.1.0.jar" Benchmark
+	java -cp "out:org.eclipse.paho.client.mqttv3-1.1.0.jar" Benchmark

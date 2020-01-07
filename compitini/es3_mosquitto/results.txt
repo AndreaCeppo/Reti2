@@ -1,0 +1,30 @@
+
+QOS: 0
+nTopics: 5
+nSubs4Topic: 10
+nPubs4Topic: 10
+nMessages4Pub: 100
+totVolume: 5000
+expectedArrived: 50000
+totArrived: 48172
+timeAVG: 46.88398
+
+QOS: 1
+nTopics: 5
+nSubs4Topic: 10
+nPubs4Topic: 10
+nMessages4Pub: 100
+totVolume: 5000
+expectedArrived: 50000
+totArrived: 50000
+timeAVG: 213.76723
+
+QOS: 2
+nTopics: 5
+nSubs4Topic: 10
+nPubs4Topic: 10
+nMessages4Pub: 100
+totVolume: 5000
+expectedArrived: 50000
+totArrived: 49882
+timeAVG: 56.373722

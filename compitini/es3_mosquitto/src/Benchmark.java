@@ -8,12 +8,12 @@ import java.util.UUID;
 public class Benchmark
 {
 
-	private final String brokerUrl = "tcp://localhost:1883";
+	private final String brokerUrl = "tcp://193.206.55.23:1883";
 
-	private final int nSubs4Topic = 5;
-	private final int nPubs4Topic = 5;
+	private final int nSubs4Topic = 10;
+	private final int nPubs4Topic = 10;
 	private final int nTopics = 5;
-	private final int nMessages4Pub = 1000;
+	private final int nMessages4Pub = 100;
 	private final int qos = 2;
 
 	public Benchmark()
