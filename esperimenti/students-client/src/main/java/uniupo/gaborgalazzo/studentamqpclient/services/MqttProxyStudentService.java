@@ -7,7 +7,7 @@ import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import uniupo.gaborgalazzo.studentamqpclient.model.Request;
+import uniupo.gaborgalazzo.studentamqpclient.model.Payload;
 import uniupo.gaborgalazzo.studentamqpclient.model.Student;
 
 import java.math.BigInteger;
@@ -43,7 +43,7 @@ public class MqttProxyStudentService implements IStudentService
 	}
 
 
-	private synchronized  <T> T mqttRPC(Request request, Class<T> tClass) throws Exception
+	private synchronized  <T> T mqttRPC(Payload request, Class<T> tClass) throws Exception
 	{
 		MqttMessage mqttMessage = new MqttMessage();
 		mqttMessage.setPayload(objectMapper.writeValueAsBytes(request));
@@ -80,9 +80,9 @@ public class MqttProxyStudentService implements IStudentService
 	@Override
 	public synchronized List<Student> getAllStudents(String search) throws Exception
 	{
-		Request request = new Request();
-		request.setFunction(Request.FUN_SEARCH_ALL);
-		request.setData(search);
+		Payload request = new Payload();
+		request.setFunction(Payload.FUN_SEARCH_ALL);
+		request.setRequest(search);
 		return mqttRPC(request, new ArrayList<Student>().getClass());
 	}
 
@@ -123,9 +123,9 @@ public class MqttProxyStudentService implements IStudentService
 	public Student addStudent(Student student) throws Exception
 	{
 
-		Request request = new Request();
-		request.setFunction(Request.FUN_ADD);
-		request.setData(objectMapper.writeValueAsString(student));
+		Payload request = new Payload();
+		request.setFunction(Payload.FUN_ADD);
+		request.setRequest(objectMapper.writeValueAsString(student));
 		return mqttRPC(request, Student.class);
 	}
 
@@ -133,27 +133,27 @@ public class MqttProxyStudentService implements IStudentService
 	@Override
 	public Student getStudentById(long id) throws Exception
 	{
-		Request request = new Request();
-		request.setFunction(Request.FUN_FIND_BY_ID);
-		request.setData(id);
+		Payload request = new Payload();
+		request.setFunction(Payload.FUN_FIND_BY_ID);
+		request.setRequest(id);
 		return mqttRPC(request, Student.class);
 	}
 
 	@Override
 	public void deleteStudentById(long id) throws Exception
 	{
-		Request request = new Request();
-		request.setFunction(Request.FUN_DELETE);
-		request.setData(id);
+		Payload request = new Payload();
+		request.setFunction(Payload.FUN_DELETE);
+		request.setRequest(id);
 		mqttRPC(request, String.class);
 	}
 
 	@Override
 	public Student updateStudent(Student student) throws Exception
 	{
-		Request request = new Request();
-		request.setFunction(Request.FUN_EDIT);
-		request.setData(objectMapper.writeValueAsString(student));
+		Payload request = new Payload();
+		request.setFunction(Payload.FUN_EDIT);
+		request.setRequest(objectMapper.writeValueAsString(student));
 		return mqttRPC(request, Student.class);
 	}
 }

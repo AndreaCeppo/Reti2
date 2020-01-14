@@ -5,7 +5,7 @@ import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import uniupo.gaborgalazzo.studentamqpclient.model.Request;
+import uniupo.gaborgalazzo.studentamqpclient.model.Payload;
 import uniupo.gaborgalazzo.studentamqpclient.model.Student;
 
 import java.util.ArrayList;
@@ -39,9 +39,9 @@ public class AmqpProxyStudentService implements IStudentService
 	public Student addStudent(Student student) throws Exception
 	{
 
-		Request request = new Request();
-		request.setFunction(Request.FUN_ADD);
-		request.setData(objectMapper.writeValueAsString(student));
+		Payload request = new Payload();
+		request.setFunction(Payload.FUN_ADD);
+		request.setRequest(objectMapper.writeValueAsString(student));
 		String response = (String) template.convertSendAndReceive
 				(exchange.getName(), "rpc", objectMapper.writeValueAsString(request));
 		if (response != null)
@@ -54,9 +54,9 @@ public class AmqpProxyStudentService implements IStudentService
 	public List<Student> getAllStudents(String search) throws Exception
 	{
 
-		Request request = new Request();
-		request.setFunction(Request.FUN_SEARCH_ALL);
-		request.setData(search);
+		Payload request = new Payload();
+		request.setFunction(Payload.FUN_SEARCH_ALL);
+		request.setRequest(search);
 		String response = (String) template.convertSendAndReceive
 				(exchange.getName(), "rpc", objectMapper.writeValueAsString(request));
 		if (response != null)
@@ -68,9 +68,9 @@ public class AmqpProxyStudentService implements IStudentService
 	@Override
 	public Student getStudentById(long id) throws Exception
 	{
-		Request request = new Request();
-		request.setFunction(Request.FUN_FIND_BY_ID);
-		request.setData(id);
+		Payload request = new Payload();
+		request.setFunction(Payload.FUN_FIND_BY_ID);
+		request.setRequest(id);
 		String response = (String) template.convertSendAndReceive
 				(exchange.getName(), "rpc", objectMapper.writeValueAsString(request));
 		if (response != null)
@@ -82,9 +82,9 @@ public class AmqpProxyStudentService implements IStudentService
 	@Override
 	public void deleteStudentById(long id) throws Exception
 	{
-		Request request = new Request();
-		request.setFunction(Request.FUN_DELETE);
-		request.setData(id);
+		Payload request = new Payload();
+		request.setFunction(Payload.FUN_DELETE);
+		request.setRequest(id);
 		template.convertSendAndReceive
 				(exchange.getName(), "rpc", objectMapper.writeValueAsString(request));
 	}
@@ -92,9 +92,9 @@ public class AmqpProxyStudentService implements IStudentService
 	@Override
 	public Student updateStudent(Student student) throws Exception
 	{
-		Request request = new Request();
-		request.setFunction(Request.FUN_EDIT);
-		request.setData(objectMapper.writeValueAsString(student));
+		Payload request = new Payload();
+		request.setFunction(Payload.FUN_EDIT);
+		request.setRequest(objectMapper.writeValueAsString(student));
 		String response = (String) template.convertSendAndReceive
 				(exchange.getName(), "rpc", objectMapper.writeValueAsString(request));
 		if (response != null)

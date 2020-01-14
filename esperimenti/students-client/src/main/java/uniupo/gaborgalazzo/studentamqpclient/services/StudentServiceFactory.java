@@ -14,6 +14,8 @@ public class StudentServiceFactory
 	private AmqpProxyStudentService amqpProxyStudentService;
 	@Autowired
 	private MqttProxyStudentService mqttProxyStudentService;
+	@Autowired
+	private MqttSingleQueueProxyStudentService mqttSingleQueueProxyStudentService;
 
 	public RestStudentService getRestStudentService()
 	{
@@ -33,5 +35,9 @@ public class StudentServiceFactory
 	public MqttProxyStudentService getMqttProxyStudentService()
 	{
 		return mqttProxyStudentService;
+	}
+
+	public MqttSingleQueueProxyStudentService getMqttSingleQueueProxyStudentService() {
+		return mqttSingleQueueProxyStudentService;
 	}
 }

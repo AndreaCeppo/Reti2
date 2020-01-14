@@ -11,8 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
-import uniupo.gaborgalazzo.studentamqpclient.model.Request;
+import uniupo.gaborgalazzo.studentamqpclient.model.Payload;
 import uniupo.gaborgalazzo.studentamqpclient.model.Student;
 import uniupo.gaborgalazzo.studentamqpclient.services.RestStudentService;
 
@@ -54,29 +55,29 @@ public class StudentAqmpRestProxy
 		try
 		{
 			System.out.println("request_function = " + message);
-			Request request = objectMapper.readValue(message, Request.class);
+			Payload request = objectMapper.readValue(message, Payload.class);
 
 			switch (request.getFunction())
 			{
-				case Request.FUN_FIND_BY_ID:
+				case Payload.FUN_FIND_BY_ID:
 					return objectMapper.writeValueAsString(
-							restStudentService.getStudentById((int) request.getData())
+							restStudentService.getStudentById((int) request.getRequest())
 					);
-				case Request.FUN_SEARCH_ALL:
+				case Payload.FUN_SEARCH_ALL:
 					return objectMapper.writeValueAsString(
-							restStudentService.getAllStudents((String) request.getData())
+							restStudentService.getAllStudents((String) request.getRequest())
 					);
-				case Request.FUN_ADD:
+				case Payload.FUN_ADD:
 					return objectMapper.writeValueAsString(
-							restStudentService.addStudent(objectMapper.readValue((String) request.getData(), Student.class))
+							restStudentService.addStudent(objectMapper.readValue((String) request.getRequest(), Student.class))
 					);
-				case Request.FUN_EDIT:
+				case Payload.FUN_EDIT:
 					return objectMapper.writeValueAsString(
-							restStudentService.updateStudent(objectMapper.readValue((String) request.getData(), Student.class))
+							restStudentService.updateStudent(objectMapper.readValue((String) request.getRequest(), Student.class))
 					);
 
-				case Request.FUN_DELETE:
-					restStudentService.deleteStudentById((int) request.getData());
+				case Payload.FUN_DELETE:
+					restStudentService.deleteStudentById((int) request.getRequest());
 					return objectMapper.writeValueAsString(true);
 			}
 			return null;

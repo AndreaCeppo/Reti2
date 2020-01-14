@@ -1,19 +1,13 @@
 package uniupo.gaborgalazzo.studentamqpclient.amqpclients;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.amqp.core.DirectExchange;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
-import uniupo.gaborgalazzo.studentamqpclient.model.Request;
+import uniupo.gaborgalazzo.studentamqpclient.model.Payload;
 import uniupo.gaborgalazzo.studentamqpclient.model.Student;
 import uniupo.gaborgalazzo.studentamqpclient.services.IStudentService;
-import uniupo.gaborgalazzo.studentamqpclient.services.RestStudentService;
 import uniupo.gaborgalazzo.studentamqpclient.services.StudentServiceFactory;
 
 import java.util.List;
@@ -44,6 +38,7 @@ public class StudentClient implements CommandLineRunner
 		System.out.println("2. AMQP SERVER");
 		System.out.println("3. AMQP PROXY");
 		System.out.println("4. MQTT PROXY");
+		System.out.println("5. MQTT SingleQueue PROXY");
 		int option = scanner.nextInt();
 		System.out.println("oprion: "+option);
 		switch (option){
@@ -58,6 +53,9 @@ public class StudentClient implements CommandLineRunner
 				break;
 			case 4:
 				studentService = studentServiceFactory.getMqttProxyStudentService();
+				break;
+			case 5:
+				studentService = studentServiceFactory.getMqttSingleQueueProxyStudentService();
 				break;
 			default:
 				System.out.println("Error");
@@ -135,9 +133,9 @@ public class StudentClient implements CommandLineRunner
 	{
 		System.out.println("Id :");
 		long id =  scanner.nextLong();
-		Request request = new Request();
-		request.setFunction(Request.FUN_DELETE);
-		request.setData(id);
+		Payload request = new Payload();
+		request.setFunction(Payload.FUN_DELETE);
+		request.setRequest(id);
 		try
 		{
 			studentService.deleteStudentById(id);
@@ -153,9 +151,9 @@ public class StudentClient implements CommandLineRunner
 		scanner.nextLine();
 		System.out.println("Query :");
 		String query =  scanner.nextLine();
-		Request request = new Request();
-		request.setFunction(Request.FUN_SEARCH_ALL);
-		request.setData(query);
+		Payload request = new Payload();
+		request.setFunction(Payload.FUN_SEARCH_ALL);
+		request.setRequest(query);
 		try
 		{
 			List<Student> response = studentService.getAllStudents(query);
@@ -170,9 +168,9 @@ public class StudentClient implements CommandLineRunner
 	{
 		System.out.println("Id :");
 		int id =  scanner.nextInt();
-		Request request = new Request();
-		request.setFunction(Request.FUN_FIND_BY_ID);
-		request.setData(id);
+		Payload request = new Payload();
+		request.setFunction(Payload.FUN_FIND_BY_ID);
+		request.setRequest(id);
 		try
 		{
 			Student response = studentService.getStudentById(id);

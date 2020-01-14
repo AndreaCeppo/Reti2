@@ -2,7 +2,10 @@ package uniupo.gaborgalazzo.studentamqpclient.proxy;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.eclipse.paho.client.mqttv3.*;
+import org.eclipse.paho.client.mqttv3.IMqttClient;
+import org.eclipse.paho.client.mqttv3.MqttClient;
+import org.eclipse.paho.client.mqttv3.MqttException;
+import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -21,7 +24,7 @@ import uniupo.gaborgalazzo.studentamqpclient.model.Student;
 import uniupo.gaborgalazzo.studentamqpclient.services.RestStudentService;
 
 @Configuration
-public class StudentMqttRestProxy
+public class StudentMqttSingleQueueRestProxy
 {
 
 	@Value("${mqtt.hostname}")
@@ -37,32 +40,32 @@ public class StudentMqttRestProxy
 	@Autowired
 	private RestStudentService restStudentService;
 	@Bean
-	public MessageChannel mqttInputChannel() {
+	public MessageChannel mqttSqInputChannel() {
 		return new DirectChannel();
 	}
 
 	@Bean
-	public MessageProducer inbound() {
+	public MessageProducer inboundSq() {
 		MqttPahoMessageDrivenChannelAdapter adapter =
-				new MqttPahoMessageDrivenChannelAdapter("tcp://" + hostname + ":" + port, "server-mqtt",
-						topic + "/handler/+/req");
+				new MqttPahoMessageDrivenChannelAdapter("tcp://" + hostname + ":" + port, "server-mqtt-sq",
+						topic + "/sqhandler/req");
 		adapter.setCompletionTimeout(5000);
 		adapter.setConverter(new DefaultPahoMessageConverter());
 		adapter.setQos(2);
-		adapter.setOutputChannel(mqttInputChannel());
+		adapter.setOutputChannel(mqttSqInputChannel());
 		return adapter;
 	}
 
 	@Bean
-	public IMqttClient mqttResponder() throws MqttException {
+	public IMqttClient mqttSqResponder() throws MqttException {
 
 
-		return new MqttClient("tcp://" + hostname + ":" + port, "resp-mqtt");
+		return new MqttClient("tcp://" + hostname + ":" + port, "resp-mqtt-sq");
 	}
 
 	@Bean
-	@ServiceActivator(inputChannel = "mqttInputChannel")
-	public MessageHandler handler(IMqttClient mqttResponder) {
+	@ServiceActivator(inputChannel = "mqttSqInputChannel")
+	public MessageHandler handlerSq(IMqttClient mqttResponder) {
 		return new MessageHandler() {
 
 			@Override
@@ -72,14 +75,25 @@ public class StudentMqttRestProxy
 				try
 				{
 					MqttMessage mqttMessage = new MqttMessage();
-					byte[] resp = handleRequest(message.getPayload().toString());
-					mqttMessage.setPayload(resp);
+					Payload request = objectMapper.readValue(message.getPayload().toString(), Payload.class);
+
+					Object resp = handleRequest(request);
+
+					Payload respPayload = new Payload();
+					respPayload.setUid(request.getUid());
+					respPayload.setFunction(request.getFunction());
+					respPayload.setResponse(resp);
+					respPayload.setClientId(request.getClientId());
+
+					mqttMessage.setPayload(objectMapper.writeValueAsBytes(respPayload));
 					mqttMessage.setQos(2);
 					mqttMessage.setRetained(false);
+
+					String respTopic = topic + "/sqhandler/resp";
 					mqttResponder.connect();
-					String respTopic = message.getHeaders().get("mqtt_receivedTopic").toString().replace("/req", "/resp");
 					mqttResponder.publish(respTopic, mqttMessage);
 					mqttResponder.disconnect();
+
 				} catch (Exception e)
 				{
 					e.printStackTrace();
@@ -87,40 +101,30 @@ public class StudentMqttRestProxy
 
 			}
 
-			public byte[] handleRequest(String message) throws JsonProcessingException
+			public Object handleRequest(Payload request) throws JsonProcessingException
 			{
 				ObjectMapper objectMapper = new ObjectMapper();
 				try
 				{
-					Payload request = objectMapper.readValue(message, Payload.class);
-
 					switch (request.getFunction())
 					{
 						case Payload.FUN_FIND_BY_ID:
-							return objectMapper.writeValueAsBytes(
-									restStudentService.getStudentById((int) request.getRequest())
-							);
+							return restStudentService.getStudentById((int) request.getRequest());
 						case Payload.FUN_SEARCH_ALL:
-							return objectMapper.writeValueAsBytes(
-									restStudentService.getAllStudents((String) request.getRequest())
-							);
+							return restStudentService.getAllStudents((String) request.getRequest());
 						case Payload.FUN_ADD:
-							return objectMapper.writeValueAsBytes(
-									restStudentService.addStudent(objectMapper.readValue((String) request.getRequest(), Student.class))
-							);
+							return restStudentService.addStudent(objectMapper.readValue((String) request.getRequest(), Student.class));
 						case Payload.FUN_EDIT:
-							return objectMapper.writeValueAsBytes(
-									restStudentService.updateStudent(objectMapper.readValue((String) request.getRequest(), Student.class))
-							);
+							return restStudentService.updateStudent(objectMapper.readValue((String) request.getRequest(), Student.class));
 
 						case Payload.FUN_DELETE:
 							restStudentService.deleteStudentById((int) request.getRequest());
-							return objectMapper.writeValueAsBytes(true);
+							return true;
 					}
 					return null;
 				} catch (Exception e)
 				{
-					return objectMapper.writeValueAsBytes(e.toString());
+					return e.getMessage();
 				}
 			}
 
