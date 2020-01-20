@@ -48,7 +48,7 @@ public class MqttSingleQueue {
         if(!init) {
             init = true;
             try {
-                mqttClient.subscribeWithResponse(baseTopic + "/sqhandler/resp", (tpic, msg) -> {
+                mqttClient.subscribeWithResponse(baseTopic + "/sqhandler/"+clientId+"/resp", (tpic, msg) -> {
                     resp.set(msg.toString());
                     Payload response = objectMapper.readValue(resp.get(), Payload.class);
                     Payload r = monitorMap.get(response.getUid());
@@ -96,6 +96,7 @@ public class MqttSingleQueue {
         if (resp.get().equals("null"))
             return null;
 
-        return objectMapper.readValue(resp.get(), tClass);
+        Payload response = objectMapper.readValue(resp.get(), Payload.class);
+        return objectMapper.convertValue(response.getResponse(), tClass);
     }
 }

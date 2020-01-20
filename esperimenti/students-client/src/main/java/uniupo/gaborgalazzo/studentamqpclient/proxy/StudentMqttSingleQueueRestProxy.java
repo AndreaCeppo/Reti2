@@ -89,14 +89,16 @@ public class StudentMqttSingleQueueRestProxy
 					mqttMessage.setQos(2);
 					mqttMessage.setRetained(false);
 
-					String respTopic = topic + "/sqhandler/resp";
+					String respTopic = topic + "/sqhandler/"+request.getClientId()+"/resp";
 					mqttResponder.connect();
 					mqttResponder.publish(respTopic, mqttMessage);
+
 					mqttResponder.disconnect();
+					mqttResponder.close();
 
 				} catch (Exception e)
 				{
-					e.printStackTrace();
+					// e.printStackTrace();
 				}
 
 			}
