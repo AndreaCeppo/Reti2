@@ -6,12 +6,12 @@ Inviare un documento firmato al docente.
 
 [compitini/es1_openssl](compitini/es1_openssl)
 
-##Esercizio 2: openssl
+## Esercizio 2: openssl
 Documento criptato.
 
 [compitini/es2_openssl](compitini/es2_openssl)
 
-##Esercizio 3
+## Esercizio 3
 Valutazione delle prestazioni di Mosquito
 
 [compitini/es3_mosquitto](compitini/es3_mosquitto)

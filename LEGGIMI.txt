@@ -1,0 +1,8 @@
+Per la consultazione del codice e della documentazione
+si fa rifferimento alla repository GitHub:
+
+https://github.com/GaborGalazzoUniUPO/Reti2
+
+Il README.md contiene i link ai vari esercizi
+
+Si suggerisce di esplorare la repository tramite la piattaforma GitHub per una corretta visualizzazione
